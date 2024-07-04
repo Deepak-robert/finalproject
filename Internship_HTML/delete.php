@@ -8,16 +8,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 
-session_start();
 
-// Debugging output
-echo 'Session Token: ' . htmlspecialchars($_SESSION['csrf_token']) . '<br>';
-echo 'GET Token: ' . htmlspecialchars($_GET['csrf_token']) . '<br>';
-
-// Validate CSRF token
-if (!isset($_GET['csrf_token']) || $_GET['csrf_token'] !== $_SESSION['csrf_token']) {
-    die('Invalid CSRF token');
-}
 
 // Proceed with delete logic
 
